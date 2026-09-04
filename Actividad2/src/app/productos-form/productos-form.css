@@ -1,0 +1,397 @@
+/* Variables de color y diseño */
+:host {
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --bg-main: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --error: #ef4444;
+  --error-bg: #fef2f2;
+  --success: #10b981;
+  --success-bg: #ecfdf5;
+  --radius: 12px;
+  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+.form-container {
+  max-width: 650px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-main);
+}
+
+/* Tarjeta Principal */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.card-header {
+  padding: 1.5rem 2rem;
+  background: linear-gradient(to right, #f8fafc, #f1f5f9);
+  border-bottom: 1px solid var(--border);
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.subtitle {
+  margin: 0.25rem 0 0;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.card-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Estructura de Filas e Inputs */
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.col {
+  flex: 1;
+}
+
+.form-control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.required {
+  color: var(--error);
+}
+
+.optional {
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+/* Campos de entrada (inputs, select, textarea) */
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background-color: #fff;
+  color: var(--text-main);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.form-textarea {
+  resize: vertical;
+}
+
+/* Estados de Error */
+.input-error {
+  border-color: var(--error) !important;
+  background-color: var(--error-bg);
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+.error-badge {
+  font-size: 0.775rem;
+  color: var(--error);
+  font-weight: 500;
+}
+
+/* Botón de envío */
+.form-actions {
+  margin-top: 0.5rem;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+}
+
+.btn-submit:active:not(:disabled) {
+  transform: scale(0.99);
+}
+
+.btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Inspector / Panel Debug */
+.debug-panel {
+  padding: 1.25rem 2rem;
+  background-color: #f1f5f9;
+  border-top: 1px solid var(--border);
+}
+
+.debug-panel h4 {
+  margin: 0 0 0.75rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.status-grid {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.status-chip {
+  padding: 0.25rem 0.625rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #e2e8f0;
+  color: var(--text-muted);
+}
+
+.status-chip.valid {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.status-chip.invalid {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.status-chip.active {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.json-preview summary {
+  font-size: 0.8rem;
+  color: var(--primary);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.json-preview pre {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  background: #1e293b;
+  color: #f8fafc;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  overflow-x: auto;
+}
+
+/* Sección de Productos Registrados (Historial) */
+.productos-registrados-container {
+  margin-top: 2rem;
+}
+
+.productos-registrados-container h3 {
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+.productos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.alert-success {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background-color: var(--success-bg);
+  border: 1px solid #a7f3d0;
+  border-radius: var(--radius);
+  align-items: flex-start;
+}
+
+.alert-icon {
+  font-size: 1.25rem;
+}
+
+.alert-content strong {
+  display: block;
+  font-size: 1rem;
+  color: #065f46;
+}
+
+.alert-content p {
+  margin: 0.25rem 0 0;
+  font-size: 0.875rem;
+  color: #047857;
+}
+
+.descripcion-text {
+  font-size: 0.825rem !important;
+  color: #059669 !important;
+}
+
+/* Ajustes Responsive */
+@media (max-width: 480px) {
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .card-body {
+    padding: 1.25rem;
+  }
+}
+
+/* Contenedor de la Tabla */
+.tabla-container {
+  margin-top: 2rem;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.tabla-header {
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(to right, #f8fafc, #f1f5f9);
+  border-bottom: 1px solid var(--border);
+}
+
+.tabla-header h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Estilos Básicos de la Tabla */
+.productos-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.productos-table th {
+  background-color: #f8fafc;
+  color: var(--text-muted);
+  font-weight: 600;
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--border);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.productos-table td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-main);
+  vertical-align: middle;
+}
+
+.productos-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.productos-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Columnas Específicas y Badges */
+.col-id {
+  color: var(--text-muted);
+  font-weight: 500;
+  width: 40px;
+}
+
+.col-nombre {
+  color: #0f172a;
+}
+
+.col-precio {
+  font-weight: 600;
+  color: #059669;
+}
+
+.col-desc {
+  color: var(--text-muted);
+  max-width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background-color: #e0e7ff;
+  color: #3730a3;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.stock-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background-color: #dcfce7;
+  color: #166534;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.stock-badge.out-of-stock {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
